@@ -16,6 +16,8 @@ public class PlayersApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        PlayersGUI myGUI = new PlayersGUI();
+        myGUI.setVisible(true);
     }
     
 }
