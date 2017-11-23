@@ -5,17 +5,24 @@
  */
 package playersapp;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author dell
  */
 public class PlayersGUI extends javax.swing.JFrame {
 
+    private Players p;
+    private ArrayList<Players> player;
     /**
      * Creates new form PlayersGUI
      */
     public PlayersGUI() {
         initComponents();
+        player = new ArrayList<>();
+        
+        p = new Dota2();
     }
 
     /**
@@ -48,7 +55,7 @@ public class PlayersGUI extends javax.swing.JFrame {
         lblD2Role = new javax.swing.JLabel();
         lblD2TeamSponsor = new javax.swing.JLabel();
         fldD2Role = new javax.swing.JTextField();
-        fldD2TeamSponsor = new javax.swing.JTextField();
+        fldD2Sponsor = new javax.swing.JTextField();
         btnEnter = new javax.swing.JButton();
         btnDisplay = new javax.swing.JButton();
 
@@ -76,7 +83,12 @@ public class PlayersGUI extends javax.swing.JFrame {
             }
         });
 
-        cbGame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dota 2", "Couter Strike: Global Offensive", "Guilty Gear" }));
+        cbGame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dota 2", "Couter Strike: Global Offensive", "Guilty Gear Xrd" }));
+        cbGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbGameActionPerformed(evt);
+            }
+        });
 
         lblD2Team.setText("Team");
 
@@ -85,6 +97,11 @@ public class PlayersGUI extends javax.swing.JFrame {
         lblD2TeamSponsor.setText("Team Sponsor");
 
         btnEnter.setText("Enter");
+        btnEnter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnterActionPerformed(evt);
+            }
+        });
 
         btnDisplay.setText("Display");
 
@@ -127,7 +144,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                                     .addComponent(fldGGSponsor, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                                     .addComponent(fldD2Team)
                                     .addComponent(fldD2Role)
-                                    .addComponent(fldD2TeamSponsor)))
+                                    .addComponent(fldD2Sponsor)))
                             .addComponent(fldGGMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(106, 106, 106)
@@ -192,7 +209,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblD2TeamSponsor)
-                    .addComponent(fldD2TeamSponsor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fldD2Sponsor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEnter)
@@ -206,6 +223,41 @@ public class PlayersGUI extends javax.swing.JFrame {
     private void fldStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldStatusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fldStatusActionPerformed
+
+    private void cbGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGameActionPerformed
+        // TODO add your handling code here:
+        if(cbGame.getSelectedItem().equals("Dota 2")){
+            
+        }
+        else if(cbGame.getSelectedItem().equals("Couter Strike: Global Offensive")){
+            
+        }
+        else{
+            fldD2Team.setVisible(false);
+            fldD2Role.setVisible(false);
+            fldD2Sponsor.setVisible(false);
+            
+            p = new GuiltyGear();
+        }
+    }//GEN-LAST:event_cbGameActionPerformed
+
+    private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
+        // TODO add your handling code here:
+        if (p instanceof Dota2){
+            
+        }
+        else if (p instanceof CounterStrike){
+            
+        }
+        else {
+            p.setName(fldName.getText());
+            p.setRegion(fldRegion.getText());
+            p.setStatus(fldStatus.getText());
+            p.setWinrate(fldWinrate.getText());
+            ((GuiltyGear) p).setMain(fldGGMain.getText());
+            ((GuiltyGear) p).setController(fldGGController.getText());
+        }
+    }//GEN-LAST:event_btnEnterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,8 +299,8 @@ public class PlayersGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnEnter;
     private javax.swing.JComboBox<String> cbGame;
     private javax.swing.JTextField fldD2Role;
+    private javax.swing.JTextField fldD2Sponsor;
     private javax.swing.JTextField fldD2Team;
-    private javax.swing.JTextField fldD2TeamSponsor;
     private javax.swing.JTextField fldGGController;
     private javax.swing.JTextField fldGGMain;
     private javax.swing.JTextField fldGGSponsor;

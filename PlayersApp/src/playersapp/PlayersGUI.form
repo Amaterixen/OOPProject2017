@@ -65,7 +65,7 @@
                                   <Component id="fldGGSponsor" pref="270" max="32767" attributes="0"/>
                                   <Component id="fldD2Team" max="32767" attributes="0"/>
                                   <Component id="fldD2Role" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="fldD2TeamSponsor" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fldD2Sponsor" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="fldGGMain" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
@@ -150,7 +150,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblD2TeamSponsor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="fldD2TeamSponsor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldD2Sponsor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="22" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -226,10 +226,13 @@
           <StringArray count="3">
             <StringItem index="0" value="Dota 2"/>
             <StringItem index="1" value="Couter Strike: Global Offensive"/>
-            <StringItem index="2" value="Guilty Gear"/>
+            <StringItem index="2" value="Guilty Gear Xrd"/>
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbGameActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
@@ -253,12 +256,15 @@
     </Component>
     <Component class="javax.swing.JTextField" name="fldD2Role">
     </Component>
-    <Component class="javax.swing.JTextField" name="fldD2TeamSponsor">
+    <Component class="javax.swing.JTextField" name="fldD2Sponsor">
     </Component>
     <Component class="javax.swing.JButton" name="btnEnter">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enter"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnterActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnDisplay">
       <Properties>

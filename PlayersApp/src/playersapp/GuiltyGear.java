@@ -5,26 +5,29 @@
  */
 package playersapp;
 
+import java.io.Serializable;
+
 /**
  *
  * @author dell
  */
-public class GuiltyGear extends Players{
+public class GuiltyGear extends Players implements Serializable{
     private String main;
     private String controller;
     private String sponsor;
 
-    public GuiltyGear(String name, String region, String status, String winrate,String main, String controller, String sponsor) {
+    public GuiltyGear(){
+        super();
+        main = "";
+        controller = "";
+        sponsor = "";
+    }
+    
+    public GuiltyGear(String name, String region, String status, String winrate, String main, String controller, String sponsor) {
         super(name, region, status, winrate);
         this.main = main;
         this.controller = controller;
         this.sponsor = sponsor;
-    }
-    
-    public void GuiltyGear(){
-        main = "";
-        controller = "";
-        sponsor = "";
     }
 
     public void setMain(String main) {

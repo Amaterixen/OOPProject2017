@@ -5,11 +5,13 @@
  */
 package playersapp;
 
+import java.io.Serializable;
+
 /**
  *
  * @author dell
  */
-public class Players {
+public class Players implements Serializable{
     protected String name;
     protected String region;
     protected String status;
