@@ -5,7 +5,14 @@
  */
 package playersapp;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,14 +21,14 @@ import java.util.ArrayList;
 public class PlayersGUI extends javax.swing.JFrame {
 
     private Players p;
-    private ArrayList<Players> player;
+    private ArrayList<Players> play;
     /**
      * Creates new form PlayersGUI
      */
     public PlayersGUI() {
         initComponents();
-        player = new ArrayList<>();
-        
+        play = new ArrayList<>();
+        readFromFile();
         p = new Dota2();
     }
 
@@ -53,7 +60,7 @@ public class PlayersGUI extends javax.swing.JFrame {
         lblD2Team = new javax.swing.JLabel();
         fldD2Team = new javax.swing.JTextField();
         lblD2Role = new javax.swing.JLabel();
-        lblD2TeamSponsor = new javax.swing.JLabel();
+        lblD2Sponsor = new javax.swing.JLabel();
         fldD2Role = new javax.swing.JTextField();
         fldD2Sponsor = new javax.swing.JTextField();
         btnEnter = new javax.swing.JButton();
@@ -94,7 +101,7 @@ public class PlayersGUI extends javax.swing.JFrame {
 
         lblD2Role.setText("Main role");
 
-        lblD2TeamSponsor.setText("Team Sponsor");
+        lblD2Sponsor.setText("Team Sponsor");
 
         btnEnter.setText("Enter");
         btnEnter.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +111,11 @@ public class PlayersGUI extends javax.swing.JFrame {
         });
 
         btnDisplay.setText("Display");
+        btnDisplay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDisplayActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,7 +166,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                         .addComponent(lblTitle))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblD2TeamSponsor)))
+                        .addComponent(lblD2Sponsor)))
                 .addContainerGap(51, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(105, 105, 105)
@@ -208,7 +220,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                     .addComponent(fldD2Role, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblD2TeamSponsor)
+                    .addComponent(lblD2Sponsor)
                     .addComponent(fldD2Sponsor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -233,9 +245,17 @@ public class PlayersGUI extends javax.swing.JFrame {
             
         }
         else{
+            lblD2Team.setVisible(false);
+            lblD2Role.setVisible(false);
+            lblD2Sponsor.setVisible(false);
             fldD2Team.setVisible(false);
             fldD2Role.setVisible(false);
             fldD2Sponsor.setVisible(false);
+            
+            lblGGMain.setVisible(true);
+            lblGGController.setVisible(true);
+            lblGGSponsor.setVisible(true);
+            
             
             p = new GuiltyGear();
         }
@@ -257,8 +277,50 @@ public class PlayersGUI extends javax.swing.JFrame {
             ((GuiltyGear) p).setMain(fldGGMain.getText());
             ((GuiltyGear) p).setController(fldGGController.getText());
         }
+        play.add(p);
+        writeToFile();
     }//GEN-LAST:event_btnEnterActionPerformed
 
+    private void btnDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayActionPerformed
+        // TODO add your handling code here:
+        for (Players i : play) {
+            if (i instanceof Dota2) {
+                
+            }
+            else if (i instanceof CounterStrike){
+                
+            }
+            else{
+                JOptionPane.showMessageDialog(null, i.getName() + ", " + i.getRegion() + ", " + i.getStatus() + ", " + ", " + i.getWinrate() + ", ", ((GuiltyGear) (i)).getMain() + ", " + ((GuiltyGear) (i)).getController() + ", " + ((GuiltyGear) (i)).getSponsor());
+            }
+        }
+    }//GEN-LAST:event_btnDisplayActionPerformed
+    
+    public void writeToFile() {
+        try{
+            File f = new File("players.dat");
+            FileOutputStream fStream = new FileOutputstream(f);
+            ObjectOutputStream oStream = new ObjectOutputStream(fStream);
+            
+            oStream.writeObject(play);
+            oStream.close();
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }
+    
+    public void readFromFile() {
+        try {
+            File f = new File("modules.dat");
+            FileInputStream fStream = new FileInputStream(f);
+            ObjectInputStream oStream = new ObjectInputStream(fStream);
+            
+            play = (ArrayList<Players>) oStream.readObject();
+            oStream.close();
+        } catch (IOException | ClassNotFoundException ex) {
+            System.out.println(ex);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -309,8 +371,8 @@ public class PlayersGUI extends javax.swing.JFrame {
     private javax.swing.JTextField fldStatus;
     private javax.swing.JTextField fldWinrate;
     private javax.swing.JLabel lblD2Role;
+    private javax.swing.JLabel lblD2Sponsor;
     private javax.swing.JLabel lblD2Team;
-    private javax.swing.JLabel lblD2TeamSponsor;
     private javax.swing.JLabel lblGGController;
     private javax.swing.JLabel lblGGMain;
     private javax.swing.JLabel lblGGSponsor;
