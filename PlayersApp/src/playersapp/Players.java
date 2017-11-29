@@ -8,8 +8,13 @@ package playersapp;
 import java.io.Serializable;
 
 /**
- *
- * @author dell
+ *Players.java
+ * 
+ * Date Initially Created: 15/11/2017
+ * 
+ * Date last modified: 29/11/2017
+ * 
+ * @author Joshua Cassidy (x16465134), Ciarán Brady (x16348791), Ting Hao Chang (x)
  */
 public class Players implements Serializable{
     protected String name;
@@ -17,6 +22,13 @@ public class Players implements Serializable{
     protected String status;
     protected String winrate;
 
+    public Players(){
+        name = "";
+        region = "";
+        status = "";
+        winrate = "";
+    }
+    
     public Players(String name, String region, String status, String winrate) {
         this.name = name;
         this.region = region;

@@ -299,7 +299,7 @@ public class PlayersGUI extends javax.swing.JFrame {
     public void writeToFile() {
         try{
             File f = new File("players.dat");
-            FileOutputStream fStream = new FileOutputstream(f);
+            FileOutputStream fStream = new FileOutputStream(f);
             ObjectOutputStream oStream = new ObjectOutputStream(fStream);
             
             oStream.writeObject(play);
