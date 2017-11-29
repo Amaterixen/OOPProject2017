@@ -10,20 +10,20 @@ import java.io.Serializable;
 public class CounterStrike extends Players implements Serializable {
     private String teamCS;
     private String roleCS;
-    private String sponsor;
+    private String sponsorCS;
     
     public CounterStrike(){
         super();
         teamCS ="";
         roleCS ="";
-        sponsor ="";
+        sponsorCS ="";
     }
 
     public CounterStrike(String teamCS, String roleCS, String sponsor, String name, String region, String status, String winrate) {
         super(name, region, status, winrate);
         this.teamCS = teamCS;
         this.roleCS = roleCS;
-        this.sponsor = sponsor;
+        this.sponsorCS = sponsor;
     }
 
     public String getTeamCS() {
@@ -42,12 +42,12 @@ public class CounterStrike extends Players implements Serializable {
         this.roleCS = roleCS;
     }
 
-    public String getSponsor() {
-        return sponsor;
+    public String getSponsorCS() {
+        return sponsorCS;
     }
 
-    public void setSponsor(String sponsor) {
-        this.sponsor = sponsor;
+    public void setSponsorCS(String sponsor) {
+        this.sponsorCS = sponsorCS;
     }
     
     
