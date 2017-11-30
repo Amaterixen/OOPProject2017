@@ -30,6 +30,8 @@ public class PlayersGUI extends javax.swing.JFrame {
         play = new ArrayList<>();
         readFromFile();
         p = new Dota2();
+        
+    
     }
 
     /**
@@ -71,6 +73,8 @@ public class PlayersGUI extends javax.swing.JFrame {
         fldSponsorCS = new javax.swing.JTextField();
         lblRoleCS = new javax.swing.JLabel();
         lblSponsorCS = new javax.swing.JLabel();
+        lblD2Main = new javax.swing.JLabel();
+        fldD2Main = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,6 +100,12 @@ public class PlayersGUI extends javax.swing.JFrame {
             }
         });
 
+        fldGGMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fldGGMainActionPerformed(evt);
+            }
+        });
+
         cbGame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dota 2", "Couter Strike: Global Offensive", "Guilty Gear Xrd" }));
         cbGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +115,7 @@ public class PlayersGUI extends javax.swing.JFrame {
 
         lblD2Team.setText("Team");
 
-        lblD2Role.setText("Main role");
+        lblD2Role.setText("Standard role");
 
         lblD2Sponsor.setText("Sponsor");
 
@@ -141,6 +151,8 @@ public class PlayersGUI extends javax.swing.JFrame {
 
         lblSponsorCS.setText("Sponsor");
 
+        lblD2Main.setText("Main");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -148,55 +160,53 @@ public class PlayersGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(106, 106, 106)
+                                .addComponent(cbGame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(155, 155, 155)
+                                .addComponent(lblTitle)))
+                        .addGap(0, 96, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblGGController)
                                     .addComponent(lblGGMain)
                                     .addComponent(lblWinrate)
                                     .addComponent(lblStatus)
                                     .addComponent(lblRegion)
                                     .addComponent(lblName))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addComponent(fldGGController, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 1, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(fldWinrate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(fldStatus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(fldRegion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(fldName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addComponent(fldGGMain, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(fldWinrate, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                    .addComponent(fldStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                    .addComponent(fldRegion, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                    .addComponent(fldName, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                    .addComponent(fldGGMain, javax.swing.GroupLayout.Alignment.TRAILING)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblGGSponsor)
                                     .addComponent(lblD2Team)
                                     .addComponent(lblD2Role)
-                                    .addComponent(lblRoleCS)
-                                    .addComponent(lblSponsorCS))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(fldGGSponsor, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                                    .addComponent(fldD2Team)
+                                    .addComponent(lblGGController))
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(fldD2Role)
-                                    .addComponent(fldD2Sponsor)
-                                    .addComponent(fldTeamCS)
-                                    .addComponent(fldRoleCS)
-                                    .addComponent(fldSponsorCS)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(cbGame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(lblTitle))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblD2Sponsor)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                                    .addComponent(fldD2Team, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(fldGGController)
+                                    .addComponent(fldGGSponsor)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblD2Sponsor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(fldD2Sponsor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                    .addComponent(fldSponsorCS, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(fldRoleCS, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(fldTeamCS, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(fldD2Main))))))
+                .addGap(30, 30, 30))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -206,7 +216,16 @@ public class PlayersGUI extends javax.swing.JFrame {
                         .addComponent(btnDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblTeamCS)))
+                        .addComponent(lblTeamCS))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblSponsorCS))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblRoleCS))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblD2Main)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -254,21 +273,25 @@ public class PlayersGUI extends javax.swing.JFrame {
                     .addComponent(fldD2Role, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblD2Main)
+                    .addComponent(fldD2Main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblD2Sponsor)
                     .addComponent(fldD2Sponsor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTeamCS)
                     .addComponent(fldTeamCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fldRoleCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRoleCS))
+                    .addComponent(lblRoleCS)
+                    .addComponent(fldRoleCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fldSponsorCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSponsorCS))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                    .addComponent(lblSponsorCS)
+                    .addComponent(fldSponsorCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEnter)
                     .addComponent(btnDisplay))
@@ -305,6 +328,8 @@ public class PlayersGUI extends javax.swing.JFrame {
             fldGGMain.setVisible(false);
             fldGGController.setVisible(false);
             fldGGSponsor.setVisible(false);
+            
+            p = new Dota2();
         }
         else if(cbGame.getSelectedItem().equals("Couter Strike: Global Offensive")){
             lblD2Team.setVisible(false);
@@ -327,14 +352,18 @@ public class PlayersGUI extends javax.swing.JFrame {
             fldGGMain.setVisible(false);
             fldGGController.setVisible(false);
             fldGGSponsor.setVisible(false);
+            
+            p = new CounterStrike();
         }
         else{
             lblD2Team.setVisible(false);
             lblD2Role.setVisible(false);
             lblD2Sponsor.setVisible(false);
+            lblD2Main.setVisible(false);
             fldD2Team.setVisible(false);
             fldD2Role.setVisible(false);
             fldD2Sponsor.setVisible(false);
+            fldD2Main.setVisible(false);
             
             lblTeamCS.setVisible(false);
             lblRoleCS.setVisible(false);
@@ -358,7 +387,14 @@ public class PlayersGUI extends javax.swing.JFrame {
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
         // TODO add your handling code here:
         if (p instanceof Dota2){
-            
+            p.setName(fldName.getText());
+            p.setRegion(fldRegion.getText());
+            p.setStatus(fldStatus.getText());
+            p.setWinrate(fldWinrate.getText());
+            ((Dota2) p).setTeam(fldD2Team.getText());
+            ((Dota2) p).setRole(fldD2Role.getText());
+            ((Dota2) p).setRole(fldD2Main.getText());
+            ((Dota2) p).setRole(fldD2Sponsor.getText());
         }
         else if (p instanceof CounterStrike){
             p.setName(fldName.getText());
@@ -385,13 +421,13 @@ public class PlayersGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         for (Players i : play) {
             if (i instanceof Dota2) {
-                
+                JOptionPane.showMessageDialog(null, i.getName() + ", " + i.getRegion() + ", " + i.getStatus() + ", " + i.getWinrate() + ", " + ((Dota2) (i)).getTeam() + ", " + ((Dota2) (i)).getRole() + ", " + ((Dota2) (i)).getMain() + ", " + ((Dota2) (i)).getSponsor());
             }
             else if (i instanceof CounterStrike){
-                JOptionPane.showMessageDialog(null, i.getName() + ", " + i.getRegion() + ", " + i.getStatus() + ", " + ", " + i.getWinrate() + ", ", ((CounterStrike) (i)).getTeamCS() + ", " + ((CounterStrike) (i)).getRoleCS() + ", " + ((CounterStrike) (i)).getSponsorCS());
+                JOptionPane.showMessageDialog(null, i.getName() + ", " + i.getRegion() + ", " + i.getStatus() + ", " + ", " + i.getWinrate() + ", " + ((CounterStrike) (i)).getTeamCS() + ", " + ((CounterStrike) (i)).getRoleCS() + ", " + ((CounterStrike) (i)).getSponsorCS());
             }
             else{
-                JOptionPane.showMessageDialog(null, i.getName() + ", " + i.getRegion() + ", " + i.getStatus() + ", " + ", " + i.getWinrate() + ", ", ((GuiltyGear) (i)).getMain() + ", " + ((GuiltyGear) (i)).getController() + ", " + ((GuiltyGear) (i)).getSponsor());
+                JOptionPane.showMessageDialog(null, i.getName() + ", " + i.getRegion() + ", " + i.getStatus() + ", " + ", " + i.getWinrate() + ", " + ((GuiltyGear) (i)).getMain() + ", " + ((GuiltyGear) (i)).getController() + ", " + ((GuiltyGear) (i)).getSponsor());
             }
         }
     }//GEN-LAST:event_btnDisplayActionPerformed
@@ -403,6 +439,10 @@ public class PlayersGUI extends javax.swing.JFrame {
     private void fldSponsorCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldSponsorCSActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fldSponsorCSActionPerformed
+
+    private void fldGGMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldGGMainActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fldGGMainActionPerformed
     
     public void writeToFile() {
         try{
@@ -468,6 +508,7 @@ public class PlayersGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnDisplay;
     private javax.swing.JButton btnEnter;
     private javax.swing.JComboBox<String> cbGame;
+    private javax.swing.JTextField fldD2Main;
     private javax.swing.JTextField fldD2Role;
     private javax.swing.JTextField fldD2Sponsor;
     private javax.swing.JTextField fldD2Team;
@@ -481,6 +522,7 @@ public class PlayersGUI extends javax.swing.JFrame {
     private javax.swing.JTextField fldStatus;
     private javax.swing.JTextField fldTeamCS;
     private javax.swing.JTextField fldWinrate;
+    private javax.swing.JLabel lblD2Main;
     private javax.swing.JLabel lblD2Role;
     private javax.swing.JLabel lblD2Sponsor;
     private javax.swing.JLabel lblD2Team;

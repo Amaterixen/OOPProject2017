@@ -8,8 +8,13 @@ package playersapp;
 import java.io.Serializable;
 
 /**
- *
- * @author dell
+ *GuiltyGear.java
+ * 
+ * Date Initially Created: 15/11/2017
+ * 
+ * Date last modified: 29/11/2017
+ * 
+ * @author Joshua Cassidy (x16465134)
  */
 public class GuiltyGear extends Players implements Serializable{
     private String main;

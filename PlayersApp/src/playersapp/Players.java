@@ -8,7 +8,7 @@ package playersapp;
 import java.io.Serializable;
 
 /**
- *Players.java
+ * Players.java
  * 
  * Date Initially Created: 15/11/2017
  * 
