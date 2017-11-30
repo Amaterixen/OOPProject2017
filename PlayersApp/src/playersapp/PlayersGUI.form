@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                              <Component id="cbGame" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblGGController" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblGGMain" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblWinrate" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblStatus" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblRegion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblName" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="44" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="fldWinrate" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                                  <Component id="fldStatus" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                                  <Component id="fldRegion" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                                  <Component id="fldName" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                                  <Component id="fldGGController" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="fldGGMain" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblGGSponsor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblD2Team" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblD2Role" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="fldGGSponsor" pref="270" max="32767" attributes="0"/>
+                                  <Component id="fldD2Team" max="32767" attributes="0"/>
+                                  <Component id="fldD2Role" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fldTeamCS" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fldRoleCS" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fldSponsorCS" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="lblD2Sponsor" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="fldD2Main" max="32767" attributes="0"/>
+                                  <Component id="fldD2Sponsor" pref="270" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="btnEnter" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnDisplay" min="-2" pref="75" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblTeamCS" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblSponsorCS" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblRoleCS" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblD2Main" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="cbGame" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldName" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblRegion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldRegion" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblWinrate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldWinrate" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblGGMain" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldGGMain" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblGGController" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldGGController" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblGGSponsor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldGGSponsor" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblD2Team" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldD2Team" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblD2Role" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldD2Role" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblD2Main" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldD2Main" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblD2Sponsor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldD2Sponsor" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblTeamCS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldTeamCS" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblRoleCS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldRoleCS" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblSponsorCS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fldSponsorCS" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="77" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnEnter" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblTitle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Player Details"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRegion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Region"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblStatus">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Status"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblWinrate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Winrate"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblGGMain">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Main"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblGGController">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Controller"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblGGSponsor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sponsor"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldGGController">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldName">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldRegion">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldStatus">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fldStatusActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldWinrate">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldGGMain">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldGGSponsor">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbGame">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Dota 2"/>
+            <StringItem index="1" value="Couter Strike: Global Offensive"/>
+            <StringItem index="2" value="Guilty Gear Xrd"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbGameActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblD2Team">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Team"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldD2Team">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblD2Role">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Standard role"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblD2Sponsor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sponsor"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldD2Role">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldD2Sponsor">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEnter">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Enter"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnterActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Display"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDisplayActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTeamCS">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Team"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldTeamCS">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fldTeamCSActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldRoleCS">
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldSponsorCS">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fldSponsorCSActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRoleCS">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Role"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblSponsorCS">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sponsor"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblD2Main">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Main"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="fldD2Main">
+    </Component>
+  </SubComponents>
+</Form>
