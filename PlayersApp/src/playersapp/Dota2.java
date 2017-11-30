@@ -5,7 +5,6 @@
  */
 package playersapp;
 
-<<<<<<< HEAD
 import java.io.Serializable;
 
 /**
@@ -68,12 +67,4 @@ public class Dota2 extends Players implements Serializable{
     }
     
     
-=======
-/**
- *
- * @author dell
- */
-public class Dota2 {
-    //test
->>>>>>> 3b0833adead11e10e32d29e9b5697e4e68007c49
 }
