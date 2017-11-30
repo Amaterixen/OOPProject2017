@@ -361,7 +361,13 @@ public class PlayersGUI extends javax.swing.JFrame {
             
         }
         else if (p instanceof CounterStrike){
-            
+            p.setName(fldName.getText());
+            p.setRegion(fldRegion.getText());
+            p.setStatus(fldStatus.getText());
+            p.setWinrate(fldWinrate.getText());
+            ((CounterStrike) p).setRoleCS(fldRoleCS.getText());
+            ((CounterStrike) p).setTeamCS(fldTeamCS.getText());
+            ((CounterStrike) p).setSponsorCS(fldSponsorCS.getText());
         }
         else {
             p.setName(fldName.getText());
