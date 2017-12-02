@@ -16,6 +16,9 @@ import java.io.Serializable;
  * 
  * @author Joshua Cassidy (x16465134)
  */
+
+//Extends the Players superclass, so that data can be pulled from it and used.
+//Making the class Serializable 
 public class GuiltyGear extends Players implements Serializable{
     private String main;
     private String controller;
@@ -28,7 +31,9 @@ public class GuiltyGear extends Players implements Serializable{
         sponsor = "";
     }
     
+    //Retrieves variables and data types from the Players superclass
     public GuiltyGear(String name, String region, String status, String winrate, String main, String controller, String sponsor) {
+        //Initialises the pulled variables
         super(name, region, status, winrate);
         this.main = main;
         this.controller = controller;

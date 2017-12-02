@@ -30,8 +30,6 @@ public class PlayersGUI extends javax.swing.JFrame {
         play = new ArrayList<>();
         readFromFile();
         p = new Dota2();
-        
-    
     }
 
     /**
@@ -459,7 +457,7 @@ public class PlayersGUI extends javax.swing.JFrame {
     
     public void readFromFile() {
         try {
-            File f = new File("modules.dat");
+            File f = new File("players.dat");
             FileInputStream fStream = new FileInputStream(f);
             ObjectInputStream oStream = new ObjectInputStream(fStream);
             

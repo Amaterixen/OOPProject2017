@@ -18,7 +18,8 @@ public class CounterStrike extends Players implements Serializable {
         roleCS ="";
         sponsorCS ="";
     }
-
+    
+   
     public CounterStrike(String teamCS, String roleCS, String sponsor, String name, String region, String status, String winrate) {
         super(name, region, status, winrate);
         this.teamCS = teamCS;
