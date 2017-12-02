@@ -30,6 +30,29 @@ public class PlayersGUI extends javax.swing.JFrame {
         play = new ArrayList<>();
         readFromFile();
         p = new Dota2();
+        
+        lblD2Team.setVisible(false);
+        lblD2Role.setVisible(false);
+        lblD2Sponsor.setVisible(false);
+        lblD2Main.setVisible(false);
+        fldD2Team.setVisible(false);
+        fldD2Role.setVisible(false);
+        fldD2Sponsor.setVisible(false);
+        fldD2Main.setVisible(false);
+            
+        lblTeamCS.setVisible(false);
+        lblRoleCS.setVisible(false);
+        lblSponsorCS.setVisible(false);
+        fldTeamCS.setVisible(false);
+        fldRoleCS.setVisible(false);
+        fldSponsorCS.setVisible(false);
+            
+        lblGGMain.setVisible(false);
+        lblGGController.setVisible(false);
+        lblGGSponsor.setVisible(false);
+        fldGGMain.setVisible(false);
+        fldGGController.setVisible(false);
+        fldGGSponsor.setVisible(false);
     }
 
     /**
@@ -104,7 +127,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             }
         });
 
-        cbGame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dota 2", "Couter Strike: Global Offensive", "Guilty Gear Xrd" }));
+        cbGame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No game selected", "Dota 2", "Couter Strike: Global Offensive", "Guilty Gear Xrd" }));
         cbGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbGameActionPerformed(evt);
@@ -353,7 +376,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             
             p = new CounterStrike();
         }
-        else{
+        else if (cbGame.getSelectedItem().equals("Guilty Gear Xrd")){
             lblD2Team.setVisible(false);
             lblD2Role.setVisible(false);
             lblD2Sponsor.setVisible(false);
@@ -380,6 +403,30 @@ public class PlayersGUI extends javax.swing.JFrame {
             
             p = new GuiltyGear();
         }
+        else {
+            lblD2Team.setVisible(false);
+            lblD2Role.setVisible(false);
+            lblD2Sponsor.setVisible(false);
+            lblD2Main.setVisible(false);
+            fldD2Team.setVisible(false);
+            fldD2Role.setVisible(false);
+            fldD2Sponsor.setVisible(false);
+            fldD2Main.setVisible(false);
+            
+            lblTeamCS.setVisible(false);
+            lblRoleCS.setVisible(false);
+            lblSponsorCS.setVisible(false);
+            fldTeamCS.setVisible(false);
+            fldRoleCS.setVisible(false);
+            fldSponsorCS.setVisible(false);
+            
+            lblGGMain.setVisible(false);
+            lblGGController.setVisible(false);
+            lblGGSponsor.setVisible(false);
+            fldGGMain.setVisible(false);
+            fldGGController.setVisible(false);
+            fldGGSponsor.setVisible(false);
+        }
     }//GEN-LAST:event_cbGameActionPerformed
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
@@ -403,13 +450,16 @@ public class PlayersGUI extends javax.swing.JFrame {
             ((CounterStrike) p).setTeamCS(fldTeamCS.getText());
             ((CounterStrike) p).setSponsorCS(fldSponsorCS.getText());
         }
-        else {
+        else if (p instanceof GuiltyGear){
             p.setName(fldName.getText());
             p.setRegion(fldRegion.getText());
             p.setStatus(fldStatus.getText());
             p.setWinrate(fldWinrate.getText());
             ((GuiltyGear) p).setMain(fldGGMain.getText());
             ((GuiltyGear) p).setController(fldGGController.getText());
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Please choose a game!");
         }
         play.add(p);
         writeToFile();
@@ -424,8 +474,11 @@ public class PlayersGUI extends javax.swing.JFrame {
             else if (i instanceof CounterStrike){
                 JOptionPane.showMessageDialog(null, i.getName() + ", " + i.getRegion() + ", " + i.getStatus() + ", " + ", " + i.getWinrate() + ", " + ((CounterStrike) (i)).getTeamCS() + ", " + ((CounterStrike) (i)).getRoleCS() + ", " + ((CounterStrike) (i)).getSponsorCS());
             }
-            else{
+            else if (i instanceof GuiltyGear){
                 JOptionPane.showMessageDialog(null, i.getName() + ", " + i.getRegion() + ", " + i.getStatus() + ", " + ", " + i.getWinrate() + ", " + ((GuiltyGear) (i)).getMain() + ", " + ((GuiltyGear) (i)).getController() + ", " + ((GuiltyGear) (i)).getSponsor());
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Please choose a game!");
             }
         }
     }//GEN-LAST:event_btnDisplayActionPerformed
