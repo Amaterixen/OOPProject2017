@@ -13,6 +13,14 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+
 
 /**
  *
@@ -236,13 +244,15 @@ public class PlayersGUI extends javax.swing.JFrame {
                         .addComponent(btnDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(lblSponsorCS))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(lblD2Main, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblSponsorCS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
                             .addComponent(lblRoleCS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTeamCS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(lblTeamCS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -324,6 +334,8 @@ public class PlayersGUI extends javax.swing.JFrame {
 
     private void cbGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGameActionPerformed
         // TODO add your handling code here:
+        
+        // This combo box decides what text fields appear so relevant info can be placed for each game
         if(cbGame.getSelectedItem().equals("Dota 2")){
             lblD2Team.setVisible(true);
             lblD2Role.setVisible(true);
@@ -403,6 +415,7 @@ public class PlayersGUI extends javax.swing.JFrame {
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
         // TODO add your handling code here:
+        //this btnEnter code takes the text that has been entered into the textfields and sends them to the write file and the display code
         if (p instanceof Dota2){
             p.setName(fldName.getText());
             p.setRegion(fldRegion.getText());

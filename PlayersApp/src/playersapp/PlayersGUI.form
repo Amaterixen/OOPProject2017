@@ -101,14 +101,17 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblSponsorCS" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblD2Main" min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="lblSponsorCS" alignment="0" pref="55" max="32767" attributes="0"/>
                           <Component id="lblRoleCS" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblTeamCS" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblTeamCS" alignment="0" pref="55" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

@@ -6,7 +6,7 @@
 package playersapp;
 
 import java.io.Serializable;
-
+// this class is used to assign one datatype to a similarly relevant datatype
 public class CounterStrike extends Players implements Serializable {
     private String teamCS;
     private String roleCS;
