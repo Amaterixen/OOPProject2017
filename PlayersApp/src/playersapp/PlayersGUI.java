@@ -189,7 +189,9 @@ public class PlayersGUI extends javax.swing.JFrame {
 
         lblD2Main.setText("Main");
 
+        fldGuide.setEditable(false);
         fldGuide.setText("Please select the game you would like to enter/view player  information for.");
+        fldGuide.setBorder(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
