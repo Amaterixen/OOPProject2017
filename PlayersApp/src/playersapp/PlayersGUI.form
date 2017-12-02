@@ -42,28 +42,30 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblGGMain" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblWinrate" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblStatus" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblRegion" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblName" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="fldWinrate" alignment="0" pref="270" max="32767" attributes="0"/>
-                                  <Component id="fldStatus" alignment="0" pref="270" max="32767" attributes="0"/>
-                                  <Component id="fldRegion" alignment="0" pref="270" max="32767" attributes="0"/>
-                                  <Component id="fldName" alignment="0" pref="270" max="32767" attributes="0"/>
+                                  <Component id="lblGGMain" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblWinrate" alignment="0" pref="56" max="32767" attributes="0"/>
+                                  <Component id="lblStatus" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblRegion" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblName" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="53" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="fldWinrate" alignment="0" pref="284" max="32767" attributes="0"/>
+                                  <Component id="fldStatus" alignment="0" pref="284" max="32767" attributes="0"/>
+                                  <Component id="fldRegion" alignment="0" pref="284" max="32767" attributes="0"/>
+                                  <Component id="fldName" alignment="0" pref="284" max="32767" attributes="0"/>
                                   <Component id="fldGGMain" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblGGSponsor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblD2Team" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblD2Role" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblGGController" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="lblGGSponsor" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="lblGGController" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="lblD2Team" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -74,14 +76,14 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblD2Sponsor" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblD2Sponsor" min="-2" pref="55" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="fldD2Sponsor" alignment="1" pref="270" max="32767" attributes="0"/>
+                                  <Component id="fldD2Sponsor" alignment="1" pref="284" max="32767" attributes="0"/>
                                   <Component id="fldSponsorCS" alignment="1" max="32767" attributes="0"/>
                                   <Component id="fldRoleCS" alignment="1" max="32767" attributes="0"/>
                                   <Component id="fldTeamCS" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="fldD2Main" max="32767" attributes="0"/>
+                                  <Component id="fldD2Main" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -99,19 +101,15 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblTeamCS" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblD2Main" min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblSponsorCS" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblRoleCS" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblD2Main" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="lblSponsorCS" alignment="0" pref="55" max="32767" attributes="0"/>
+                          <Component id="lblRoleCS" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblTeamCS" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
