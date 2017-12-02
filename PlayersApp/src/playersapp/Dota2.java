@@ -10,7 +10,11 @@ import java.io.Serializable;
 /**
  * Dota2.java
  * 
- * @author dell
+ * Initially created 15/11/2017
+ * 
+ * Date last modified 27/11/2017
+ * 
+ * @author Ting Hao Chang (x16370076)
  */
 public class Dota2 extends Players implements Serializable{
     private String team;
@@ -26,6 +30,7 @@ public class Dota2 extends Players implements Serializable{
         sponsor = "";        
     }
 
+    //This constructor is bringing variables from the Players class.
     public Dota2(String name, String region, String status, String winrate, String team, String role, String main, String sponsor) {
         super(name, region, status, winrate);
         this.team = team;
