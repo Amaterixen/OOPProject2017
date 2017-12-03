@@ -28,16 +28,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblWinrate" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                              <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                              <Component id="cbGame" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lblGGSponsor" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
@@ -75,18 +65,40 @@
                                   <Component id="fldStatus" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblRoleCS" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblSponsorCS" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblStatus" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblWinrate" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblGGSponsor" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblMainGGDisplay" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNameDisplay" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSponsorCSDisplay" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRegionDisplay" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblStatusDisplay" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblControllerGGDisplay" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSponsorGGDisplay" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRoleD2Display" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTeamD2Display" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblMainD2Display" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSponsorD2Display" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTeamCSDisplay" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblRoleCSDisplay" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblWinrateDisplay" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                      <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="cbGame" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -101,7 +113,7 @@
                       <Component id="btnDisplay" min="-2" pref="75" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="49" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -118,73 +130,87 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNameDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblRegion" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldRegion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblRegionDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblStatus" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblStatusDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblWinrate" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldWinrate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblWinrateDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblGGMain" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldGGMain" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMainGGDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblGGController" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldGGController" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblControllerGGDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblGGSponsor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldGGSponsor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblSponsorGGDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblD2Team" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldD2Team" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblTeamD2Display" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblD2Role" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldD2Role" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblRoleD2Display" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblD2Main" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldD2Main" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMainD2Display" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblD2Sponsor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldD2Sponsor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblSponsorD2Display" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblTeamCS" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldTeamCS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblTeamCSDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblRoleCS" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldRoleCS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblRoleCSDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblSponsorCS" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="fldSponsorCS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblSponsorCSDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnEnter" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -351,6 +377,76 @@
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
         </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNameDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblSponsorCSDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRegionDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblStatusDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblWinrateDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMainGGDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblControllerGGDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblSponsorGGDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRoleD2Display">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTeamD2Display">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMainD2Display">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblSponsorD2Display">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTeamCSDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRoleCSDisplay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
   </SubComponents>
