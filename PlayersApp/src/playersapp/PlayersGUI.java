@@ -84,7 +84,10 @@ public class PlayersGUI extends javax.swing.JFrame {
 
         btnEnter.setVisible(false);
         btnDisplay.setVisible(false);
-
+        
+        btnPrevious.setVisible(false);
+        btnNext.setVisible(false);
+        
         fldGuide.setText("Select the game you would like to enter/view player information for.");
     }
 
@@ -144,6 +147,8 @@ public class PlayersGUI extends javax.swing.JFrame {
         lblSponsorD2Display = new javax.swing.JLabel();
         lblTeamCSDisplay = new javax.swing.JLabel();
         lblRoleCSDisplay = new javax.swing.JLabel();
+        btnPrevious = new javax.swing.JButton();
+        btnNext = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -254,6 +259,20 @@ public class PlayersGUI extends javax.swing.JFrame {
 
         lblRoleCSDisplay.setText("jLabel1");
 
+        btnPrevious.setText("Previous");
+        btnPrevious.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPreviousActionPerformed(evt);
+            }
+        });
+
+        btnNext.setText("Next");
+        btnNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -329,9 +348,13 @@ public class PlayersGUI extends javax.swing.JFrame {
                         .addComponent(fldGuide, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(107, 107, 107)
-                        .addComponent(btnEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnEnter, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(btnPrevious, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(62, 62, 62)
-                        .addComponent(btnDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(btnNext, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(0, 49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -413,11 +436,15 @@ public class PlayersGUI extends javax.swing.JFrame {
                     .addComponent(lblSponsorCS)
                     .addComponent(fldSponsorCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSponsorCSDisplay))
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPrevious)
+                    .addComponent(btnNext))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEnter)
                     .addComponent(btnDisplay))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -464,6 +491,27 @@ public class PlayersGUI extends javax.swing.JFrame {
 
             btnEnter.setVisible(true);
             btnDisplay.setVisible(true);
+            
+            lblNameDisplay.setVisible(false);
+            lblRegionDisplay.setVisible(false);
+            lblStatusDisplay.setVisible(false);
+            lblWinrateDisplay.setVisible(false);
+
+            lblMainGGDisplay.setVisible(false);
+            lblControllerGGDisplay.setVisible(false);
+            lblSponsorGGDisplay.setVisible(false);
+
+            lblTeamD2Display.setVisible(false);
+            lblRoleD2Display.setVisible(false);
+            lblMainD2Display.setVisible(false);
+            lblSponsorD2Display.setVisible(false);
+
+            lblTeamCSDisplay.setVisible(false);
+            lblRoleCSDisplay.setVisible(false);
+            lblSponsorCSDisplay.setVisible(false);
+            
+            btnPrevious.setVisible(false);
+            btnNext.setVisible(false);
 
             fldGuide.setText("View or enter information on Dota 2 players.");
 
@@ -503,6 +551,27 @@ public class PlayersGUI extends javax.swing.JFrame {
 
             btnEnter.setVisible(true);
             btnDisplay.setVisible(true);
+            
+            lblNameDisplay.setVisible(false);
+            lblRegionDisplay.setVisible(false);
+            lblStatusDisplay.setVisible(false);
+            lblWinrateDisplay.setVisible(false);
+
+            lblMainGGDisplay.setVisible(false);
+            lblControllerGGDisplay.setVisible(false);
+            lblSponsorGGDisplay.setVisible(false);
+
+            lblTeamD2Display.setVisible(false);
+            lblRoleD2Display.setVisible(false);
+            lblMainD2Display.setVisible(false);
+            lblSponsorD2Display.setVisible(false);
+
+            lblTeamCSDisplay.setVisible(false);
+            lblRoleCSDisplay.setVisible(false);
+            lblSponsorCSDisplay.setVisible(false);
+            
+            btnPrevious.setVisible(false);
+            btnNext.setVisible(false);
 
             fldGuide.setText("View or enter information on CS:GO players.");
 
@@ -542,6 +611,27 @@ public class PlayersGUI extends javax.swing.JFrame {
 
             btnEnter.setVisible(true);
             btnDisplay.setVisible(true);
+            
+            lblNameDisplay.setVisible(false);
+            lblRegionDisplay.setVisible(false);
+            lblStatusDisplay.setVisible(false);
+            lblWinrateDisplay.setVisible(false);
+
+            lblMainGGDisplay.setVisible(false);
+            lblControllerGGDisplay.setVisible(false);
+            lblSponsorGGDisplay.setVisible(false);
+
+            lblTeamD2Display.setVisible(false);
+            lblRoleD2Display.setVisible(false);
+            lblMainD2Display.setVisible(false);
+            lblSponsorD2Display.setVisible(false);
+
+            lblTeamCSDisplay.setVisible(false);
+            lblRoleCSDisplay.setVisible(false);
+            lblSponsorCSDisplay.setVisible(false);
+            
+            btnPrevious.setVisible(false);
+            btnNext.setVisible(false);
 
             fldGuide.setText("View or enter information on Guilty Gear Xrd players.");
 
@@ -581,6 +671,27 @@ public class PlayersGUI extends javax.swing.JFrame {
 
             btnEnter.setVisible(false);
             btnDisplay.setVisible(false);
+            
+            lblNameDisplay.setVisible(false);
+            lblRegionDisplay.setVisible(false);
+            lblStatusDisplay.setVisible(false);
+            lblWinrateDisplay.setVisible(false);
+
+            lblMainGGDisplay.setVisible(false);
+            lblControllerGGDisplay.setVisible(false);
+            lblSponsorGGDisplay.setVisible(false);
+
+            lblTeamD2Display.setVisible(false);
+            lblRoleD2Display.setVisible(false);
+            lblMainD2Display.setVisible(false);
+            lblSponsorD2Display.setVisible(false);
+
+            lblTeamCSDisplay.setVisible(false);
+            lblRoleCSDisplay.setVisible(false);
+            lblSponsorCSDisplay.setVisible(false);
+            
+            btnPrevious.setVisible(false);
+            btnNext.setVisible(false);
 
             fldGuide.setText("Select the game you would like to enter/view player information for.");
         }
@@ -595,8 +706,8 @@ public class PlayersGUI extends javax.swing.JFrame {
             p.setWinrate(fldWinrate.getText());
             ((Dota2) p).setTeam(fldD2Team.getText());
             ((Dota2) p).setRole(fldD2Role.getText());
-            ((Dota2) p).setRole(fldD2Main.getText());
-            ((Dota2) p).setRole(fldD2Sponsor.getText());
+            ((Dota2) p).setMain(fldD2Main.getText());
+            ((Dota2) p).setSponsor(fldD2Sponsor.getText());
         } else if (p instanceof CounterStrike) {
             p.setName(fldName.getText());
             p.setRegion(fldRegion.getText());
@@ -655,6 +766,12 @@ public class PlayersGUI extends javax.swing.JFrame {
                 lblTeamCSDisplay.setVisible(false);
                 lblRoleCSDisplay.setVisible(false);
                 lblSponsorCSDisplay.setVisible(false);
+                
+                btnEnter.setVisible(false);
+                btnDisplay.setVisible(false);
+                
+                btnPrevious.setVisible(true);
+                btnNext.setVisible(true);
 
                 lblNameDisplay.setText(i.getName());
                 lblRegionDisplay.setText(i.getRegion());
@@ -698,6 +815,12 @@ public class PlayersGUI extends javax.swing.JFrame {
                 lblTeamCSDisplay.setVisible(true);
                 lblRoleCSDisplay.setVisible(true);
                 lblSponsorCSDisplay.setVisible(true);
+                
+                btnEnter.setVisible(false);
+                btnDisplay.setVisible(false);
+                
+                btnPrevious.setVisible(true);
+                btnNext.setVisible(true);
 
                 lblNameDisplay.setText(i.getName());
                 lblRegionDisplay.setText(i.getRegion());
@@ -740,6 +863,12 @@ public class PlayersGUI extends javax.swing.JFrame {
                 lblTeamCSDisplay.setVisible(false);
                 lblRoleCSDisplay.setVisible(false);
                 lblSponsorCSDisplay.setVisible(false);
+                
+                btnEnter.setVisible(false);
+                btnDisplay.setVisible(false);
+                
+                btnPrevious.setVisible(true);
+                btnNext.setVisible(true);
 
                 lblNameDisplay.setText(i.getName());
                 lblRegionDisplay.setText(i.getRegion());
@@ -766,6 +895,16 @@ public class PlayersGUI extends javax.swing.JFrame {
     private void fldGGMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldGGMainActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fldGGMainActionPerformed
+
+    private void btnPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreviousActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnPreviousActionPerformed
+
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnNextActionPerformed
 
     public void writeToFile() {
         try {
@@ -831,6 +970,8 @@ public class PlayersGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDisplay;
     private javax.swing.JButton btnEnter;
+    private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnPrevious;
     private javax.swing.JComboBox<String> cbGame;
     private javax.swing.JTextField fldD2Main;
     private javax.swing.JTextField fldD2Role;
