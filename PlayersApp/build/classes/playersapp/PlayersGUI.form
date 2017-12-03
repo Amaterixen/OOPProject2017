@@ -3,6 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -298,7 +299,7 @@
           <StringArray count="4">
             <StringItem index="0" value="No game selected"/>
             <StringItem index="1" value="Dota 2"/>
-            <StringItem index="2" value="Couter Strike: Global Offensive"/>
+            <StringItem index="2" value="Counter Strike: Global Offensive"/>
             <StringItem index="3" value="Guilty Gear Xrd"/>
           </StringArray>
         </Property>

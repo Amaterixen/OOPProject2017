@@ -151,6 +151,7 @@ public class PlayersGUI extends javax.swing.JFrame {
         btnNext = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         lblTitle.setText("Player Details");
 
@@ -180,7 +181,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             }
         });
 
-        cbGame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No game selected", "Dota 2", "Couter Strike: Global Offensive", "Guilty Gear Xrd" }));
+        cbGame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No game selected", "Dota 2", "Counter Strike: Global Offensive", "Guilty Gear Xrd" }));
         cbGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbGameActionPerformed(evt);
@@ -516,7 +517,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             fldGuide.setText("View or enter information on Dota 2 players.");
 
             p = new Dota2();
-        } else if (cbGame.getSelectedItem().equals("Couter Strike: Global Offensive")) {
+        } else if (cbGame.getSelectedItem().equals("Counter Strike: Global Offensive")) {
             lblName.setVisible(true);
             fldName.setVisible(true);
             lblRegion.setVisible(true);
@@ -723,8 +724,9 @@ public class PlayersGUI extends javax.swing.JFrame {
             p.setWinrate(fldWinrate.getText());
             ((GuiltyGear) p).setMain(fldGGMain.getText());
             ((GuiltyGear) p).setController(fldGGController.getText());
+            ((GuiltyGear) p).setSponsor(fldGGSponsor.getText());
         } else {
-            JOptionPane.showMessageDialog(null, "Please choose a game!");
+            //JOptionPane.showMessageDialog(null, "Please choose a game!");
         }
         play.add(p);
         writeToFile();
@@ -733,7 +735,7 @@ public class PlayersGUI extends javax.swing.JFrame {
     private void btnDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayActionPerformed
         // TODO add your handling code here:
         for (Players i : play) {
-            if (i instanceof Dota2) {
+            if (i instanceof Dota2 && cbGame.getSelectedItem().equals("Dota 2")) {
                 fldName.setVisible(false);
                 fldRegion.setVisible(false);
                 fldStatus.setVisible(false);
@@ -782,7 +784,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                 lblSponsorD2Display.setText(((Dota2) (i)).getSponsor());
                 lblMainD2Display.setText(((Dota2) (i)).getMain());
 
-            } else if (i instanceof CounterStrike) {
+            } else if (i instanceof CounterStrike && cbGame.getSelectedItem().equals("Counter Strike: Global Offensive")) {
                 fldName.setVisible(false);
                 fldRegion.setVisible(false);
                 fldStatus.setVisible(false);
@@ -830,7 +832,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                 lblRoleCSDisplay.setText(((CounterStrike) (i)).getRoleCS());
                 lblSponsorCSDisplay.setText(((CounterStrike) (i)).getSponsorCS());
 
-            } else if (i instanceof GuiltyGear) {
+            } else if (i instanceof GuiltyGear && cbGame.getSelectedItem().equals("Guilty Gear Xrd")) {
                 fldName.setVisible(false);
                 fldRegion.setVisible(false);
                 fldStatus.setVisible(false);
@@ -879,7 +881,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                 lblSponsorGGDisplay.setText(((GuiltyGear) (i)).getSponsor());
 
             } else {
-                JOptionPane.showMessageDialog(null, "Please choose a game!");
+                //JOptionPane.showMessageDialog(null, "Please choose a game!");
             }
         }
     }//GEN-LAST:event_btnDisplayActionPerformed
@@ -916,21 +918,98 @@ public class PlayersGUI extends javax.swing.JFrame {
             oStream.close();
         } catch (IOException ex) {
             System.out.println(ex);
+        }/*
+        if(cbGame.getSelectedItem().equals("Dota 2")){
+            try {
+                File fd = new File("dota2.dat");
+                FileOutputStream fdStream = new FileOutputStream(fd);
+                ObjectOutputStream oStream = new ObjectOutputStream(fdStream);
+
+                oStream.writeObject(play);
+                oStream.close();
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
         }
+        else if(cbGame.getSelectedItem().equals("Counter Strike: Global Offensive")){
+            try {
+                File fc = new File("counterStrike.dat");
+                FileOutputStream fcStream = new FileOutputStream(fc);
+                ObjectOutputStream oStream = new ObjectOutputStream(fcStream);
+
+                oStream.writeObject(play);
+                oStream.close();
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+        }
+        else if(cbGame.getSelectedItem().equals("Guilty Gear Xrd")){
+            try {
+                File fg = new File("guiltyGear.dat");
+                FileOutputStream fgStream = new FileOutputStream(fg);
+                ObjectOutputStream oStream = new ObjectOutputStream(fgStream);
+
+                oStream.writeObject(play);
+                oStream.close();
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+        }*/
     }
+        
 
     public void readFromFile() {
         try {
-            File f = new File("players.dat");
-            FileInputStream fStream = new FileInputStream(f);
-            ObjectInputStream oStream = new ObjectInputStream(fStream);
+                File f = new File("players.dat");
+                FileInputStream fStream = new FileInputStream(f);
+                ObjectInputStream oStream = new ObjectInputStream(fStream);
 
-            play = (ArrayList<Players>) oStream.readObject();
-            oStream.close();
-        } catch (IOException | ClassNotFoundException ex) {
-            System.out.println(ex);
+                play = (ArrayList<Players>) oStream.readObject();
+                oStream.close();
+            } catch (IOException | ClassNotFoundException ex) {
+                System.out.println(ex);
+            }
+        /*if(cbGame.getSelectedItem().equals("Dota 2")){
+            try {
+                File f = new File("dota2.dat");
+                FileInputStream fStream = new FileInputStream(f);
+                ObjectInputStream oStream = new ObjectInputStream(fStream);
+
+                play = (ArrayList<Players>) oStream.readObject();
+                oStream.close();
+            } catch (IOException | ClassNotFoundException ex) {
+                System.out.println(ex);
+            }
         }
+        else if(cbGame.getSelectedItem().equals("Counter Strike: Global Offensive")){
+            try {
+                File f = new File("counterStrike.dat");
+                FileInputStream fStream = new FileInputStream(f);
+                ObjectInputStream oStream = new ObjectInputStream(fStream);
+
+                play = (ArrayList<Players>) oStream.readObject();
+                oStream.close();
+            } catch (IOException | ClassNotFoundException ex) {
+                System.out.println(ex);
+            }
+        }
+        else if(cbGame.getSelectedItem().equals("Guilty Gear Xrd")){
+            try {
+                File f = new File("guiltyGear.dat");
+                FileInputStream fStream = new FileInputStream(f);
+                ObjectInputStream oStream = new ObjectInputStream(fStream);
+
+                play = (ArrayList<Players>) oStream.readObject();
+                oStream.close();
+            } catch (IOException | ClassNotFoundException ex) {
+                System.out.println(ex);
+            }
+        }
+        else{
+            
+        }*/
     }
+    
 
     /**
      * @param args the command line arguments
