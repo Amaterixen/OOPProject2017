@@ -708,7 +708,47 @@ public class PlayersGUI extends javax.swing.JFrame {
                 lblSponsorCSDisplay.setText(((CounterStrike) (i)).getSponsorCS());
 
             } else if (i instanceof GuiltyGear) {
-                JOptionPane.showMessageDialog(null, i.getName() + ", " + i.getRegion() + ", " + i.getStatus() + ", " + ", " + i.getWinrate() + ", " + ((GuiltyGear) (i)).getMain() + ", " + ((GuiltyGear) (i)).getController() + ", " + ((GuiltyGear) (i)).getSponsor());
+                fldName.setVisible(false);
+                fldRegion.setVisible(false);
+                fldStatus.setVisible(false);
+                fldWinrate.setVisible(false);
+                fldGGMain.setVisible(false);
+                fldGGController.setVisible(false);
+                fldGGSponsor.setVisible(false);
+                fldD2Team.setVisible(false);
+                fldD2Role.setVisible(false);
+                fldD2Main.setVisible(false);
+                fldD2Sponsor.setVisible(false);
+                fldTeamCS.setVisible(false);
+                fldRoleCS.setVisible(false);
+                fldSponsorCS.setVisible(false);
+
+                lblNameDisplay.setVisible(true);
+                lblRegionDisplay.setVisible(true);
+                lblStatusDisplay.setVisible(true);
+                lblWinrateDisplay.setVisible(true);
+
+                lblMainGGDisplay.setVisible(true);
+                lblControllerGGDisplay.setVisible(true);
+                lblSponsorGGDisplay.setVisible(true);
+
+                lblTeamD2Display.setVisible(false);
+                lblRoleD2Display.setVisible(false);
+                lblMainD2Display.setVisible(false);
+                lblSponsorD2Display.setVisible(false);
+
+                lblTeamCSDisplay.setVisible(false);
+                lblRoleCSDisplay.setVisible(false);
+                lblSponsorCSDisplay.setVisible(false);
+
+                lblNameDisplay.setText(i.getName());
+                lblRegionDisplay.setText(i.getRegion());
+                lblStatusDisplay.setText(i.getStatus());
+                lblWinrateDisplay.setText(i.getWinrate());
+                lblMainGGDisplay.setText(((GuiltyGear) (i)).getMain());
+                lblControllerGGDisplay.setText(((GuiltyGear) (i)).getController());
+                lblSponsorGGDisplay.setText(((GuiltyGear) (i)).getSponsor());
+
             } else {
                 JOptionPane.showMessageDialog(null, "Please choose a game!");
             }
