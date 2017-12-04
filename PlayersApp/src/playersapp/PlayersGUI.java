@@ -22,6 +22,8 @@ public class PlayersGUI extends javax.swing.JFrame {
 
     private Players p;
     private ArrayList<Players> play;
+    private String nameCheck;
+    private int j;
 
     /**
      * Creates new form PlayersGUI
@@ -31,6 +33,7 @@ public class PlayersGUI extends javax.swing.JFrame {
         play = new ArrayList<>();
         readFromFile();
         p = new Dota2();
+        j = 0;
 
         lblName.setVisible(false);
         fldName.setVisible(false);
@@ -279,6 +282,21 @@ public class PlayersGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(fldGuide, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnEnter, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(btnPrevious, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(btnNext, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(0, 49, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -342,21 +360,6 @@ public class PlayersGUI extends javax.swing.JFrame {
                         .addGap(96, 96, 96)
                         .addComponent(cbGame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(fldGuide, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnEnter, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                            .addComponent(btnPrevious, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                            .addComponent(btnNext, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -437,7 +440,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                     .addComponent(lblSponsorCS)
                     .addComponent(fldSponsorCS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSponsorCSDisplay))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPrevious)
                     .addComponent(btnNext))
@@ -517,6 +520,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             fldGuide.setText("View or enter information on Dota 2 players.");
 
             p = new Dota2();
+            j = 0;
         } else if (cbGame.getSelectedItem().equals("Counter Strike: Global Offensive")) {
             lblName.setVisible(true);
             fldName.setVisible(true);
@@ -577,6 +581,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             fldGuide.setText("View or enter information on CS:GO players.");
 
             p = new CounterStrike();
+            j = 0;
         } else if (cbGame.getSelectedItem().equals("Guilty Gear Xrd")) {
             lblName.setVisible(true);
             fldName.setVisible(true);
@@ -637,6 +642,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             fldGuide.setText("View or enter information on Guilty Gear Xrd players.");
 
             p = new GuiltyGear();
+            j = 0;
         } else {
             lblName.setVisible(false);
             fldName.setVisible(false);
@@ -900,17 +906,56 @@ public class PlayersGUI extends javax.swing.JFrame {
 
     private void btnPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreviousActionPerformed
         // TODO add your handling code here:
-        
+        if (cbGame.getSelectedItem().equals("Dota 2") && j > 0){
+            j--;
+            while(play.get(j) instanceof CounterStrike || play.get(j) instanceof GuiltyGear){
+                j--;
+            }
+          
+            lblNameDisplay.setText(play.get(j).getName());
+            lblRegionDisplay.setText(play.get(j).getRegion());
+            lblStatusDisplay.setText(play.get(j).getStatus());
+            lblWinrateDisplay.setText(play.get(j).getWinrate());
+            lblTeamD2Display.setText(((Dota2)play.get(j)).getTeam());
+            lblRoleD2Display.setText(((Dota2)play.get(j)).getRole());
+            lblSponsorD2Display.setText(((Dota2)play.get(j)).getSponsor());
+            lblMainD2Display.setText(((Dota2)play.get(j)).getMain());
+        }
+        else{
+            
+        }
     }//GEN-LAST:event_btnPreviousActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // TODO add your handling code here:
+        
+            //System.out.println(j.getName());
+//            Dota2 dota2 = new Dota2();
+        if (cbGame.getSelectedItem().equals("Dota 2") && j < play.size()){
+            j++;
+            while(play.get(j) instanceof CounterStrike || play.get(j) instanceof GuiltyGear){
+                j++;
+            }
+            lblNameDisplay.setText(play.get(j).getName());
+            lblRegionDisplay.setText(play.get(j).getRegion());
+            lblStatusDisplay.setText(play.get(j).getStatus());
+            lblWinrateDisplay.setText(play.get(j).getWinrate());
+            lblTeamD2Display.setText(((Dota2)play.get(j)).getTeam());
+            lblRoleD2Display.setText(((Dota2)play.get(j)).getRole());
+            lblSponsorD2Display.setText(((Dota2)play.get(j)).getSponsor());
+            lblMainD2Display.setText(((Dota2)play.get(j)).getMain());
+        }
+        else{
+            
+        
+        }
         
     }//GEN-LAST:event_btnNextActionPerformed
 
     public void writeToFile() {
         try {
             File f = new File("players.dat");
+            // true means append
             FileOutputStream fStream = new FileOutputStream(f);
             ObjectOutputStream oStream = new ObjectOutputStream(fStream);
 
@@ -918,96 +963,21 @@ public class PlayersGUI extends javax.swing.JFrame {
             oStream.close();
         } catch (IOException ex) {
             System.out.println(ex);
-        }/*
-        if(cbGame.getSelectedItem().equals("Dota 2")){
-            try {
-                File fd = new File("dota2.dat");
-                FileOutputStream fdStream = new FileOutputStream(fd);
-                ObjectOutputStream oStream = new ObjectOutputStream(fdStream);
-
-                oStream.writeObject(play);
-                oStream.close();
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
         }
-        else if(cbGame.getSelectedItem().equals("Counter Strike: Global Offensive")){
-            try {
-                File fc = new File("counterStrike.dat");
-                FileOutputStream fcStream = new FileOutputStream(fc);
-                ObjectOutputStream oStream = new ObjectOutputStream(fcStream);
-
-                oStream.writeObject(play);
-                oStream.close();
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
-        }
-        else if(cbGame.getSelectedItem().equals("Guilty Gear Xrd")){
-            try {
-                File fg = new File("guiltyGear.dat");
-                FileOutputStream fgStream = new FileOutputStream(fg);
-                ObjectOutputStream oStream = new ObjectOutputStream(fgStream);
-
-                oStream.writeObject(play);
-                oStream.close();
-            } catch (IOException ex) {
-                System.out.println(ex);
-            }
-        }*/
     }
         
 
     public void readFromFile() {
         try {
-                File f = new File("players.dat");
-                FileInputStream fStream = new FileInputStream(f);
-                ObjectInputStream oStream = new ObjectInputStream(fStream);
+            File f = new File("players.dat");
+            FileInputStream fStream = new FileInputStream(f);
+            ObjectInputStream oStream = new ObjectInputStream(fStream);
 
-                play = (ArrayList<Players>) oStream.readObject();
-                oStream.close();
-            } catch (IOException | ClassNotFoundException ex) {
-                System.out.println(ex);
-            }
-        /*if(cbGame.getSelectedItem().equals("Dota 2")){
-            try {
-                File f = new File("dota2.dat");
-                FileInputStream fStream = new FileInputStream(f);
-                ObjectInputStream oStream = new ObjectInputStream(fStream);
-
-                play = (ArrayList<Players>) oStream.readObject();
-                oStream.close();
-            } catch (IOException | ClassNotFoundException ex) {
-                System.out.println(ex);
-            }
+            play = (ArrayList<Players>) oStream.readObject();
+            oStream.close();
+        } catch (IOException | ClassNotFoundException ex) {
+            System.out.println(ex);
         }
-        else if(cbGame.getSelectedItem().equals("Counter Strike: Global Offensive")){
-            try {
-                File f = new File("counterStrike.dat");
-                FileInputStream fStream = new FileInputStream(f);
-                ObjectInputStream oStream = new ObjectInputStream(fStream);
-
-                play = (ArrayList<Players>) oStream.readObject();
-                oStream.close();
-            } catch (IOException | ClassNotFoundException ex) {
-                System.out.println(ex);
-            }
-        }
-        else if(cbGame.getSelectedItem().equals("Guilty Gear Xrd")){
-            try {
-                File f = new File("guiltyGear.dat");
-                FileInputStream fStream = new FileInputStream(f);
-                ObjectInputStream oStream = new ObjectInputStream(fStream);
-
-                play = (ArrayList<Players>) oStream.readObject();
-                oStream.close();
-            } catch (IOException | ClassNotFoundException ex) {
-                System.out.println(ex);
-            }
-        }
-        else{
-            
-        }*/
     }
     
 
