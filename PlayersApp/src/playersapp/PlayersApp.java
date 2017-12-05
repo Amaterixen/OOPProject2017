@@ -18,6 +18,12 @@ public class PlayersApp {
         // TODO code application logic here
         PlayersGUI myGUI = new PlayersGUI();
         myGUI.setVisible(true);
+        
+        /*REFERENCES
+        -Frances' lectures
+        -
+        
+        */
     }
     
 }

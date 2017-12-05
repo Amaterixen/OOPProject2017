@@ -22,12 +22,16 @@ import javax.swing.JOptionPane;
  * Date last modified: 5/12/2017
  * 
  * @author Ting Hao Chang (x16370076), Joshua Cassidy (x16465134), Ciarán Brady (x16348791)
+ * 
+ * @reference for while loop https://stackoverflow.com/questions/39730789/continuous-loop-until-condition-is-met
  */
 public class PlayersGUI extends javax.swing.JFrame {
 
+    //Creates new instance of Players called p for storing data -Josh
     private Players p;
     //This ArrayList stores the information on each player that is entered in the GUI. - Ting
     private ArrayList<Players> play;
+    //Creates an integer variable called j that is used to denote the index of the ArrayList players for use in the Next and Previous buttons -Josh
     private int j;
 
     /**
@@ -39,7 +43,9 @@ public class PlayersGUI extends javax.swing.JFrame {
         play = new ArrayList<>();
         //This command is calling the readFromFile function, so that it pulls information previously saved to the players.dat file. -Ting
         readFromFile();
+        //Sets p to be a new instance of Dota2 subclass -Josh
         p = new Dota2();
+        //Sets j to be 0 when the project starts
         j = 0;
         
         //set visible code to show programs inital state before a game is selected - ciaran x16348791
@@ -70,6 +76,7 @@ public class PlayersGUI extends javax.swing.JFrame {
         fldRoleCS.setVisible(false);
         fldSponsorCS.setVisible(false);
 
+        //Sets Guilty Gear information in the GUI to be hidden on startup -Josh
         lblGGMain.setVisible(false);
         lblGGController.setVisible(false);
         lblGGSponsor.setVisible(false);
@@ -82,6 +89,7 @@ public class PlayersGUI extends javax.swing.JFrame {
         lblStatusDisplay.setVisible(false);
         lblWinrateDisplay.setVisible(false);
 
+        //Sets display labels for information on Guilty Gear players to be hidden on startup -Josh
         lblMainGGDisplay.setVisible(false);
         lblControllerGGDisplay.setVisible(false);
         lblSponsorGGDisplay.setVisible(false);
@@ -96,6 +104,7 @@ public class PlayersGUI extends javax.swing.JFrame {
         lblRoleCSDisplay.setVisible(false);
         lblSponsorCSDisplay.setVisible(false);
 
+        //Sets buttons to be hidden on startup so they are not pushed when they should not be used, and so that the GUI is cleaner. -Josh
         btnEnter.setVisible(false);
         btnDisplay.setVisible(false);
         
@@ -535,8 +544,9 @@ public class PlayersGUI extends javax.swing.JFrame {
             //This code sets it so that it gives this message is displayed on the fldGuide label when Dota2 is selected on the combobox. -Ting
             fldGuide.setText("View or enter information on Dota 2 players.");
 
-            //This sets p to be a new instance of Dota2
+            //This sets p to be a new instance of Dota2 -Ting
             p = new Dota2();
+            ////Sets j to be 0 when Dota 2 is selected on the combobox to avoid issues when trying to use the Next and Previous buttons when switching between games. -Josh
             j = 0;
         } else if (cbGame.getSelectedItem().equals("Counter Strike: Global Offensive")) {
             lblName.setVisible(true);
@@ -599,8 +609,11 @@ public class PlayersGUI extends javax.swing.JFrame {
             fldGuide.setText("View or enter information on CS:GO players.");
 
             p = new CounterStrike();
+            //Sets j to be 0 when Counter Strike: Global Offensive is selected on the combobox to avoid issues when trying to use the Next and Previous buttons when switching between games. -Josh
             j = 0;
+        //Sets the following code to run if the selected option in the combo box is Guilty Gear Xrd -Josh
         } else if (cbGame.getSelectedItem().equals("Guilty Gear Xrd")) {
+            //Sets the necessary labels, buttons, and text fields to be present for entering data or viewing data, and ensures anything else is hidden -Josh
             lblName.setVisible(true);
             fldName.setVisible(true);
             lblRegion.setVisible(true);
@@ -660,9 +673,13 @@ public class PlayersGUI extends javax.swing.JFrame {
             //This code sets it so that it gives this message is displayed on the fldGuide label when Guilty Gear Xrd is selected on the combobox. -Ting
             fldGuide.setText("View or enter information on Guilty Gear Xrd players.");
 
+            //Sets p to be a new instance of the GuiltyGear class -Josh
             p = new GuiltyGear();
+            //Sets j to be 0 when Guilty Gear Xrd is selected on the combobox to avoid issues when trying to use the Next and Previous buttons when switching between games. -Josh
             j = 0;
+        //Sets the following code to execute if No game selected is the chosen option on the combo box -Josh
         } else {
+            //Reverts the program to be how it was when it was initially loaded up
             lblName.setVisible(false);
             fldName.setVisible(false);
             lblRegion.setVisible(false);
@@ -746,7 +763,9 @@ public class PlayersGUI extends javax.swing.JFrame {
             ((CounterStrike) p).setRoleCS(fldRoleCS.getText());
             ((CounterStrike) p).setTeamCS(fldTeamCS.getText());
             ((CounterStrike) p).setSponsorCS(fldSponsorCS.getText());
+        //Checks if p is an instance of GuiltyGear class and executes following code if appropriate -Josh
         } else if (p instanceof GuiltyGear) {
+            //Takes text from text fields and inserts them into p
             p.setName(fldName.getText());
             p.setRegion(fldRegion.getText());
             p.setStatus(fldStatus.getText());
@@ -757,7 +776,9 @@ public class PlayersGUI extends javax.swing.JFrame {
         } else {
             //JOptionPane.showMessageDialog(null, "Please choose a game!");
         }
+        //Takes the information that has just been added to p and inserts it as a record in the ArrayList play. -Josh
         play.add(p);
+        //Calls the writeToFile function -Josh
         writeToFile();
     }//GEN-LAST:event_btnEnterActionPerformed
 
@@ -865,8 +886,9 @@ public class PlayersGUI extends javax.swing.JFrame {
                 lblTeamCSDisplay.setText(((CounterStrike) (i)).getTeamCS());
                 lblRoleCSDisplay.setText(((CounterStrike) (i)).getRoleCS());
                 lblSponsorCSDisplay.setText(((CounterStrike) (i)).getSponsorCS());
-
+            //Checks if the index of player the loop is on is an instance of GuiltyGear, and if the selected option in the combobox is Guilty Gear Xrd -Josh
             } else if (i instanceof GuiltyGear && cbGame.getSelectedItem().equals("Guilty Gear Xrd")) {
+                //Sets the following text fields to be hidden, and the display labels to be visible -Josh
                 fldName.setVisible(false);
                 fldRegion.setVisible(false);
                 fldStatus.setVisible(false);
@@ -906,6 +928,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                 btnPrevious.setVisible(true);
                 btnNext.setVisible(true);
 
+                //Sets text to be the most recent data entered of this class -Josh
                 lblNameDisplay.setText(i.getName());
                 lblRegionDisplay.setText(i.getRegion());
                 lblStatusDisplay.setText(i.getStatus());
@@ -934,8 +957,10 @@ public class PlayersGUI extends javax.swing.JFrame {
 
     private void btnPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreviousActionPerformed
         // TODO add your handling code here:
+        //Sets Next button to bring j down by one when Previous button is hit and Dota 2 is selected in the combo box, and j is less more than zero -Josh
         if (cbGame.getSelectedItem().equals("Dota 2") && j > 0){
             j--;
+            //Loop that sets to keep going down if the index that the above j-- brings j to is an instance of CounterStrike or GuiltyGear, so that information on these do not display in the Dota section -Josh 
             while(play.get(j) instanceof CounterStrike || play.get(j) instanceof GuiltyGear){
                 j--;
             }
@@ -992,6 +1017,8 @@ public class PlayersGUI extends javax.swing.JFrame {
         //The -1 is there because the .size command gets the number of values in the array rather than the last value, so there would have been an error. -Ting
         if (cbGame.getSelectedItem().equals("Dota 2") && j < play.size()-1){
             j++;
+            //Idea for while loop was taken from here https://stackoverflow.com/questions/39730789/continuous-loop-until-condition-is-met
+            /*@reference https://stackoverflow.com/questions/39730789/continuous-loop-until-condition-is-met*/
             while(play.get(j) instanceof CounterStrike || play.get(j) instanceof GuiltyGear){
                 j++;
             }
@@ -1043,13 +1070,14 @@ public class PlayersGUI extends javax.swing.JFrame {
 
     public void writeToFile() {
         try {
+            //Creates a file which information from the play ArrayList is written to -Josh
             File f = new File("players.dat");
-            // true means append
             FileOutputStream fStream = new FileOutputStream(f);
             ObjectOutputStream oStream = new ObjectOutputStream(fStream);
 
             oStream.writeObject(play);
             oStream.close();
+        //Handles exceptions -Josh
         } catch (IOException ex) {
             System.out.println(ex);
         }
@@ -1058,6 +1086,7 @@ public class PlayersGUI extends javax.swing.JFrame {
 
     public void readFromFile() {
         try {
+            //Creates a file if it does not already exist which information is pulled from -Josh
             File f = new File("players.dat");
             FileInputStream fStream = new FileInputStream(f);
             ObjectInputStream oStream = new ObjectInputStream(fStream);
