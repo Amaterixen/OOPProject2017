@@ -1,7 +1,8 @@
 /*
  *CounterStrike.java
  *@author Ciaran Brady x16348791
- *22/11/17
+ * created: 15/11/17
+ *last modified: 22/11/17
  */
 package playersapp;
 
@@ -19,7 +20,7 @@ public class CounterStrike extends Players implements Serializable {
         sponsorCS ="";
     }
     
-   
+   //this constructor conects the variables to the super class Player.java - ciaran x16348791
     public CounterStrike(String teamCS, String roleCS, String sponsor, String name, String region, String status, String winrate) {
         super(name, region, status, winrate);
         this.teamCS = teamCS;
@@ -27,6 +28,7 @@ public class CounterStrike extends Players implements Serializable {
         this.sponsorCS = sponsor;
     }
 
+   //Setters and Getters for CounterStrike variables - ciaran x16348791
     public String getTeamCS() {
         return teamCS;
     }

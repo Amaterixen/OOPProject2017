@@ -34,6 +34,8 @@ public class PlayersGUI extends javax.swing.JFrame {
         readFromFile();
         p = new Dota2();
         j = 0;
+        
+        //set visible code to show programs inital state before a game is selected - ciaran x16348791
 
         lblName.setVisible(false);
         fldName.setVisible(false);
@@ -460,6 +462,7 @@ public class PlayersGUI extends javax.swing.JFrame {
 
     private void cbGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGameActionPerformed
         // TODO add your handling code here:
+        //This set of if/else statements decided what is displayed when a game is selected within the combo box and sets where the data will be sent eg: if dota is select p becomes dota - ciaran x16348791
         if (cbGame.getSelectedItem().equals("Dota 2")) {
             lblName.setVisible(true);
             fldName.setVisible(true);
@@ -706,6 +709,7 @@ public class PlayersGUI extends javax.swing.JFrame {
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
         // TODO add your handling code here:
+       
         if (p instanceof Dota2) {
             p.setName(fldName.getText());
             p.setRegion(fldRegion.getText());
@@ -738,6 +742,7 @@ public class PlayersGUI extends javax.swing.JFrame {
         writeToFile();
     }//GEN-LAST:event_btnEnterActionPerformed
 
+    //this code takes the first set of information for the selected game and displays it to the user when the display button is clicked -ciaran x16348791
     private void btnDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayActionPerformed
         // TODO add your handling code here:
         for (Players i : play) {
