@@ -935,9 +935,23 @@ public class PlayersGUI extends javax.swing.JFrame {
             lblRegionDisplay.setText(play.get(j).getRegion());
             lblStatusDisplay.setText(play.get(j).getStatus());
             lblWinrateDisplay.setText(play.get(j).getWinrate());
-            lblTeamD2Display.setText(((CounterStrike)play.get(j)).getTeamCS());
-            lblRoleD2Display.setText(((CounterStrike)play.get(j)).getRoleCS());
-            lblSponsorD2Display.setText(((CounterStrike)play.get(j)).getSponsorCS());
+            lblTeamCSDisplay.setText(((CounterStrike)play.get(j)).getTeamCS());
+            lblRoleCSDisplay.setText(((CounterStrike)play.get(j)).getRoleCS());
+            lblSponsorCSDisplay.setText(((CounterStrike)play.get(j)).getSponsorCS());
+            
+        }
+        else if(cbGame.getSelectedItem().equals("Guilty Gear Xrd") && j > 0){
+            j--;
+            while(play.get(j) instanceof Dota2 || play.get(j) instanceof CounterStrike){
+                j--;
+            }
+            lblNameDisplay.setText(play.get(j).getName());
+            lblRegionDisplay.setText(play.get(j).getRegion());
+            lblStatusDisplay.setText(play.get(j).getStatus());
+            lblWinrateDisplay.setText(play.get(j).getWinrate());
+            lblMainGGDisplay.setText(((GuiltyGear)play.get(j)).getMain());
+            lblControllerGGDisplay.setText(((GuiltyGear)play.get(j)).getController());
+            lblSponsorGGDisplay.setText(((GuiltyGear)play.get(j)).getSponsor());
             
         }
         else{
@@ -976,6 +990,20 @@ public class PlayersGUI extends javax.swing.JFrame {
             lblTeamCSDisplay.setText(((CounterStrike)play.get(j)).getTeamCS());
             lblRoleCSDisplay.setText(((CounterStrike)play.get(j)).getRoleCS());
             lblSponsorCSDisplay.setText(((CounterStrike)play.get(j)).getSponsorCS());
+            
+        }
+        else if(cbGame.getSelectedItem().equals("Guilty Gear Xrd") && j < play.size()){
+            j++;
+            while(play.get(j) instanceof Dota2 || play.get(j) instanceof CounterStrike){
+                j++;
+            }
+            lblNameDisplay.setText(play.get(j).getName());
+            lblRegionDisplay.setText(play.get(j).getRegion());
+            lblStatusDisplay.setText(play.get(j).getStatus());
+            lblWinrateDisplay.setText(play.get(j).getWinrate());
+            lblMainGGDisplay.setText(((GuiltyGear)play.get(j)).getMain());
+            lblControllerGGDisplay.setText(((GuiltyGear)play.get(j)).getController());
+            lblSponsorGGDisplay.setText(((GuiltyGear)play.get(j)).getSponsor());
             
         }
         else{
