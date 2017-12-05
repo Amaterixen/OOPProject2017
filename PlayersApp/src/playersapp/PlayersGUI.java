@@ -921,6 +921,20 @@ public class PlayersGUI extends javax.swing.JFrame {
             lblSponsorD2Display.setText(((Dota2)play.get(j)).getSponsor());
             lblMainD2Display.setText(((Dota2)play.get(j)).getMain());
         }
+        else if(cbGame.getSelectedItem().equals("Counter Strike: Global Offensive") && j > 0){
+            j--;
+            while(play.get(j) instanceof Dota2 || play.get(j) instanceof GuiltyGear){
+                j--;
+            }
+            lblNameDisplay.setText(play.get(j).getName());
+            lblRegionDisplay.setText(play.get(j).getRegion());
+            lblStatusDisplay.setText(play.get(j).getStatus());
+            lblWinrateDisplay.setText(play.get(j).getWinrate());
+            lblTeamD2Display.setText(((CounterStrike)play.get(j)).getTeamCS());
+            lblRoleD2Display.setText(((CounterStrike)play.get(j)).getRoleCS());
+            lblSponsorD2Display.setText(((CounterStrike)play.get(j)).getSponsorCS());
+            
+        }
         else{
             
         }
@@ -945,10 +959,24 @@ public class PlayersGUI extends javax.swing.JFrame {
             lblSponsorD2Display.setText(((Dota2)play.get(j)).getSponsor());
             lblMainD2Display.setText(((Dota2)play.get(j)).getMain());
         }
+        else if(cbGame.getSelectedItem().equals("Counter Strike: Global Offensive") && j < play.size()){
+            j++;
+            while(play.get(j) instanceof Dota2 || play.get(j) instanceof GuiltyGear){
+                j++;
+            }
+            lblNameDisplay.setText(play.get(j).getName());
+            lblRegionDisplay.setText(play.get(j).getRegion());
+            lblStatusDisplay.setText(play.get(j).getStatus());
+            lblWinrateDisplay.setText(play.get(j).getWinrate());
+            lblTeamCSDisplay.setText(((CounterStrike)play.get(j)).getTeamCS());
+            lblRoleCSDisplay.setText(((CounterStrike)play.get(j)).getRoleCS());
+            lblSponsorCSDisplay.setText(((CounterStrike)play.get(j)).getSponsorCS());
+            
+        }
         else{
             
-        
         }
+        
         
     }//GEN-LAST:event_btnNextActionPerformed
 
