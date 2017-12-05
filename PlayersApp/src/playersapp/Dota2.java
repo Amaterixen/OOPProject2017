@@ -16,6 +16,9 @@ import java.io.Serializable;
  * 
  * @author Ting Hao Chang (x16370076)
  */
+
+//The Extends command lets the programmer bring over information from the superclass.
+//The Serializable command allows for Polymorphism
 public class Dota2 extends Players implements Serializable{
     private String team;
     private String role;
@@ -23,6 +26,7 @@ public class Dota2 extends Players implements Serializable{
     private String sponsor;
     
     public Dota2(){
+        //Pulls variables from Players superclass
         super();
         team = "";
         role = "";
@@ -30,8 +34,9 @@ public class Dota2 extends Players implements Serializable{
         sponsor = "";        
     }
 
-    //This constructor is bringing variables from the Players class.
+    //This constructor is Inheriting variables from the Players class.
     public Dota2(String name, String region, String status, String winrate, String team, String role, String main, String sponsor) {
+        //Inherits variables from the Players superclass
         super(name, region, status, winrate);
         this.team = team;
         this.role = role;
@@ -39,6 +44,7 @@ public class Dota2 extends Players implements Serializable{
         this.sponsor = sponsor;
     }
 
+    //Here are the getters
     public String getTeam() {
         return team;
     }
@@ -55,6 +61,7 @@ public class Dota2 extends Players implements Serializable{
         return sponsor;
     }
 
+    //Here are the setters
     public void setTeam(String team) {
         this.team = team;
     }

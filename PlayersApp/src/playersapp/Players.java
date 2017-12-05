@@ -14,7 +14,7 @@ import java.io.Serializable;
  * 
  * Date last modified: 29/11/2017
  * 
- * @author Joshua Cassidy (x16465134), Ciarán Brady (x16348791), Ting Hao Chang (x)
+ * @author Joshua Cassidy (x16465134), Ciarán Brady (x16348791), Ting Hao Chang (x16370076)
  */
 public class Players implements Serializable{
     protected String name;

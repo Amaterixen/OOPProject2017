@@ -33,11 +33,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-<<<<<<< HEAD
                           <Component id="btnEnter" max="32767" attributes="0"/>
-=======
-                          <Component id="btnEnter" pref="75" max="32767" attributes="0"/>
->>>>>>> d2c776de2ffd5967fdd7a2d422df05b8deb06513
                           <Component id="btnPrevious" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>

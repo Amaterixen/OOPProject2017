@@ -15,14 +15,19 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author dell
+ *PlayersGUI.java
+ * 
+ * Initially created 16/11/2017
+ * 
+ * Date last modified: 5/12/2017
+ * 
+ * @author Ting Hao Chang (x16370076), Joshua Cassidy (x16465134), Ciarán Brady (x16348791)
  */
 public class PlayersGUI extends javax.swing.JFrame {
 
     private Players p;
+    //This ArrayList stores the information on each player that is entered in the GUI. - Ting
     private ArrayList<Players> play;
-    private String nameCheck;
     private int j;
 
     /**
@@ -30,7 +35,9 @@ public class PlayersGUI extends javax.swing.JFrame {
      */
     public PlayersGUI() {
         initComponents();
+        //This is initialising the ArrayList named play. - Ting
         play = new ArrayList<>();
+        //This command is calling the readFromFile function, so that it pulls information previously saved to the players.dat file. -Ting
         readFromFile();
         p = new Dota2();
         j = 0;
@@ -45,7 +52,8 @@ public class PlayersGUI extends javax.swing.JFrame {
         fldStatus.setVisible(false);
         lblWinrate.setVisible(false);
         fldWinrate.setVisible(false);
-
+        
+        //This code sets the elements used for displaying Dota 2 data to be invisible on the program startup. - Ting
         lblD2Team.setVisible(false);
         lblD2Role.setVisible(false);
         lblD2Sponsor.setVisible(false);
@@ -77,7 +85,8 @@ public class PlayersGUI extends javax.swing.JFrame {
         lblMainGGDisplay.setVisible(false);
         lblControllerGGDisplay.setVisible(false);
         lblSponsorGGDisplay.setVisible(false);
-
+        
+        //This also code sets the elements used for displaying Dota 2 data to be invisible on the program startup. - Ting
         lblTeamD2Display.setVisible(false);
         lblRoleD2Display.setVisible(false);
         lblMainD2Display.setVisible(false);
@@ -93,6 +102,8 @@ public class PlayersGUI extends javax.swing.JFrame {
         btnPrevious.setVisible(false);
         btnNext.setVisible(false);
         
+        //This textfield is set to have the text inside it change based on the selected option in the combo box with instructional messages. - Ting
+        //This code sets it so that it gives this message on startup. -Ting
         fldGuide.setText("Select the game you would like to enter/view player information for.");
     }
 
@@ -291,11 +302,11 @@ public class PlayersGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(107, 107, 107)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnEnter, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(btnEnter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnPrevious, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                            .addComponent(btnDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 75, Short.MAX_VALUE)
                             .addComponent(btnNext, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(0, 49, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
@@ -464,6 +475,7 @@ public class PlayersGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         //This set of if/else statements decided what is displayed when a game is selected within the combo box and sets where the data will be sent eg: if dota is select p becomes dota - ciaran x16348791
         if (cbGame.getSelectedItem().equals("Dota 2")) {
+            //The following code sets labels/textfields/buttons to be visible or invisible based on the selected option in the combobox. -Ting
             lblName.setVisible(true);
             fldName.setVisible(true);
             lblRegion.setVisible(true);
@@ -520,8 +532,10 @@ public class PlayersGUI extends javax.swing.JFrame {
             btnPrevious.setVisible(false);
             btnNext.setVisible(false);
 
+            //This code sets it so that it gives this message is displayed on the fldGuide label when Dota2 is selected on the combobox. -Ting
             fldGuide.setText("View or enter information on Dota 2 players.");
 
+            //This sets p to be a new instance of Dota2
             p = new Dota2();
             j = 0;
         } else if (cbGame.getSelectedItem().equals("Counter Strike: Global Offensive")) {
@@ -581,6 +595,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             btnPrevious.setVisible(false);
             btnNext.setVisible(false);
 
+            //This code sets it so that it gives this message is displayed on the fldGuide label when Counter Strike is selected on the combobox. -Ting
             fldGuide.setText("View or enter information on CS:GO players.");
 
             p = new CounterStrike();
@@ -642,6 +657,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             btnPrevious.setVisible(false);
             btnNext.setVisible(false);
 
+            //This code sets it so that it gives this message is displayed on the fldGuide label when Guilty Gear Xrd is selected on the combobox. -Ting
             fldGuide.setText("View or enter information on Guilty Gear Xrd players.");
 
             p = new GuiltyGear();
@@ -703,18 +719,21 @@ public class PlayersGUI extends javax.swing.JFrame {
             btnPrevious.setVisible(false);
             btnNext.setVisible(false);
 
+            //This code sets it so that it gives this message is displayed on the fldGuide label when Dota2 is selected on the combobox. -Ting
             fldGuide.setText("Select the game you would like to enter/view player information for.");
         }
     }//GEN-LAST:event_cbGameActionPerformed
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
         // TODO add your handling code here:
-       
+       //This code sees if p is an instance of the Dota2, CounterStrike, or GuiltyGear subclass, and then executes the code within the if statement. -Ting
         if (p instanceof Dota2) {
+            //This code takes the information from the textfields when Dota2 is selected on the combobox and puts them into p. 
             p.setName(fldName.getText());
             p.setRegion(fldRegion.getText());
             p.setStatus(fldStatus.getText());
             p.setWinrate(fldWinrate.getText());
+            //The following code gets the text from textfields specific to the Dota 2 selection and puts them into p.
             ((Dota2) p).setTeam(fldD2Team.getText());
             ((Dota2) p).setRole(fldD2Role.getText());
             ((Dota2) p).setMain(fldD2Main.getText());
@@ -745,8 +764,11 @@ public class PlayersGUI extends javax.swing.JFrame {
     //this code takes the first set of information for the selected game and displays it to the user when the display button is clicked -ciaran x16348791
     private void btnDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisplayActionPerformed
         // TODO add your handling code here:
+        //This is a for loop -Ting
         for (Players i : play) {
+            //This code checks if the current iteration of the loop is an instance of Dota2, and if the combobox has "Dota2" selected, and then executes the following code. -Ting
             if (i instanceof Dota2 && cbGame.getSelectedItem().equals("Dota 2")) {
+                //This sets labels and textfields irrelevent to the displaying of data about Dota2 players to be invisible. It also hides the Enter and Display buttons. -Ting
                 fldName.setVisible(false);
                 fldRegion.setVisible(false);
                 fldStatus.setVisible(false);
@@ -786,6 +808,7 @@ public class PlayersGUI extends javax.swing.JFrame {
                 btnPrevious.setVisible(true);
                 btnNext.setVisible(true);
 
+                //This code sets the display labels to show information about the player most recently entered into the Dota 2 section. -Ting
                 lblNameDisplay.setText(i.getName());
                 lblRegionDisplay.setText(i.getRegion());
                 lblStatusDisplay.setText(i.getStatus());
@@ -940,6 +963,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             lblSponsorCSDisplay.setText(((CounterStrike)play.get(j)).getSponsorCS());
             
         }
+        //This sets the Previous button code for the Guilty Gear section -Ting
         else if(cbGame.getSelectedItem().equals("Guilty Gear Xrd") && j > 0){
             j--;
             while(play.get(j) instanceof Dota2 || play.get(j) instanceof CounterStrike){
@@ -949,6 +973,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             lblRegionDisplay.setText(play.get(j).getRegion());
             lblStatusDisplay.setText(play.get(j).getStatus());
             lblWinrateDisplay.setText(play.get(j).getWinrate());
+            //The piece of code that says (GuiltyGear) grabs information specific to the GuiltyGear class -Ting
             lblMainGGDisplay.setText(((GuiltyGear)play.get(j)).getMain());
             lblControllerGGDisplay.setText(((GuiltyGear)play.get(j)).getController());
             lblSponsorGGDisplay.setText(((GuiltyGear)play.get(j)).getSponsor());
@@ -964,7 +989,8 @@ public class PlayersGUI extends javax.swing.JFrame {
         
             //System.out.println(j.getName());
 //            Dota2 dota2 = new Dota2();
-        if (cbGame.getSelectedItem().equals("Dota 2") && j < play.size()){
+        //The -1 is there because the .size command gets the number of values in the array rather than the last value, so there would have been an error. -Ting
+        if (cbGame.getSelectedItem().equals("Dota 2") && j < play.size()-1){
             j++;
             while(play.get(j) instanceof CounterStrike || play.get(j) instanceof GuiltyGear){
                 j++;
@@ -978,7 +1004,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             lblSponsorD2Display.setText(((Dota2)play.get(j)).getSponsor());
             lblMainD2Display.setText(((Dota2)play.get(j)).getMain());
         }
-        else if(cbGame.getSelectedItem().equals("Counter Strike: Global Offensive") && j < play.size()){
+        else if(cbGame.getSelectedItem().equals("Counter Strike: Global Offensive") && j < play.size()-1){
             j++;
             while(play.get(j) instanceof Dota2 || play.get(j) instanceof GuiltyGear){
                 j++;
@@ -992,7 +1018,8 @@ public class PlayersGUI extends javax.swing.JFrame {
             lblSponsorCSDisplay.setText(((CounterStrike)play.get(j)).getSponsorCS());
             
         }
-        else if(cbGame.getSelectedItem().equals("Guilty Gear Xrd") && j < play.size()){
+        //This sets the Next button code for the Guilty Gear section -Ting
+        else if(cbGame.getSelectedItem().equals("Guilty Gear Xrd") && j < play.size()-1){
             j++;
             while(play.get(j) instanceof Dota2 || play.get(j) instanceof CounterStrike){
                 j++;
@@ -1001,6 +1028,7 @@ public class PlayersGUI extends javax.swing.JFrame {
             lblRegionDisplay.setText(play.get(j).getRegion());
             lblStatusDisplay.setText(play.get(j).getStatus());
             lblWinrateDisplay.setText(play.get(j).getWinrate());
+            //The piece of code that says (GuiltyGear) grabs information specific to the GuiltyGear class -Ting
             lblMainGGDisplay.setText(((GuiltyGear)play.get(j)).getMain());
             lblControllerGGDisplay.setText(((GuiltyGear)play.get(j)).getController());
             lblSponsorGGDisplay.setText(((GuiltyGear)play.get(j)).getSponsor());
